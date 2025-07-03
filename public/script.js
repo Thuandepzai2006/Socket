@@ -74,7 +74,7 @@ registerForm.addEventListener("submit", (e) => {
 
     console.log("Submitting register:", username, password);
 
-    fetch('https://socket-s2mc.onrender.com//register', {
+    fetch('https://socket-s2mc.onrender.com/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
