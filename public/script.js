@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Submitting login:", username, password);
 
-        fetch('https://socket-ca4z.onrender.com/login', {
+        fetch('https://socket-s2mc.onrender.com/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Submitting register:", username, password);
 
-        fetch('https://socket-ca4z.onrender.com/register', {
+        fetch('https://socket-s2mc.onrender.com/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
