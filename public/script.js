@@ -19,6 +19,8 @@ iconClose.addEventListener('click', () => {
     wrapper.classList.remove('active-popup');
 });
 document.addEventListener("DOMContentLoaded", () => {
+    wrapper.classList.add('active-popup');
+    
     const loginForm = document.querySelector(".form-box.login form");
     const registerForm = document.querySelector(".form-box.register form");
 
