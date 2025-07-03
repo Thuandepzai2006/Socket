@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Submitting login:", username, password);
 
-        fetch('https://socket-s2mc.onrender.com/login', {
+        fetch('https://stupendous-lokum-c38740.netlify.app/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
@@ -74,7 +74,7 @@ registerForm.addEventListener("submit", (e) => {
 
     console.log("Submitting register:", username, password);
 
-    fetch('https://socket-s2mc.onrender.com/register', {
+    fetch('https://stupendous-lokum-c38740.netlify.app/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
