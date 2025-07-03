@@ -55,33 +55,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Register
-    registerForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+registerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-        const username = registerForm.querySelector('input[type="text"]').value;
-        const password = registerForm.querySelector('input[type="password"]').value;
+    const termsCheckbox = registerForm.querySelector('input[type="checkbox"]');
+    if (!termsCheckbox) {
+        console.error("Terms checkbox not found.");
+        alert("An error occurred. Please try again later.");
+        return;
+    }
+    if (!termsCheckbox.checked) {
+        alert("You must agree to the terms and conditions to register.");
+        return;
+    }
 
-        console.log("Submitting register:", username, password);
+    const username = registerForm.querySelector('input[type="text"]').value;
+    const password = registerForm.querySelector('input[type="password"]').value;
 
-        fetch('https://socket-s2mc.onrender.com/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ username, password })
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                alert("Registration successful!");
-                // Optionally, switch to login form automatically
-                document.querySelector('.wrapper').classList.remove('active');
-            } else {
-                alert("Registration failed: " + data.message);
-            }
-        })
-        .catch(err => {
-            console.error("Fetch error:", err);
-            alert("Error connecting to server.");
-        });
+    console.log("Submitting register:", username, password);
+
+    fetch('https://socket-s2mc.onrender.com//register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ username, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert("Registration successful!");
+            document.querySelector('.wrapper').classList.remove('active');
+        } else {
+            alert("Registration failed: " + data.message);
+        }
+    })
+    .catch(err => {
+        console.error("Fetch error:", err);
+        alert("Error connecting to server.");
     });
+});
 });
